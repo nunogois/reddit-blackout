@@ -1,0 +1,16 @@
+---
+import SubredditStatus from './SubredditStatus.svelte'
+
+const { subreddit } = Astro.props
+---
+
+<li class='flex justify-between items-center hover:bg-neutral-700'>
+  <a
+    href={`https://www.reddit.com/${subreddit}`}
+    target='_blank'
+    class='text-neutral-300 hover:text-neutral-100'
+  >
+    {subreddit}
+  </a>
+  <SubredditStatus {subreddit} client:only='svelte' />
+</li>
